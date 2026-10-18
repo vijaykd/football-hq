@@ -12,8 +12,8 @@
 @media(max-width:760px){.games{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:390px){.games{gap:8px}.tile{padding:12px;min-height:145px}.quizopts{grid-template-columns:1fr}}
 </style></head>
 <body><main class="wrap">
-<header class="top"><div class="brand"><div class="logo">🎮</div><div><div class="eyebrow">PARKSIDE ENTERTAINMENT</div><h1>Parkside Arcade</h1></div></div><span class="pill">16 MINI-GAMES · PLAY FREE</span></header>
-<section id="home"><div class="hero"><span class="eyebrow">YOUR NEXT CHALLENGE STARTS HERE</span><h2>Pick a game.<br>Beat your best.</h2><p>Football, cricket, basketball, chess, racing, memory, word and reaction games — all together on one page. Choose any game and play instantly.</p><button class="btn primary" onclick="document.getElementById('gamegrid').scrollIntoView({behavior:'smooth'})">Explore games ↓</button></div>
+<header class="top"><div class="brand"><div class="logo">🎮</div><div><div class="eyebrow">PARKSIDE ENTERTAINMENT</div><h1>Parkside Arcade</h1></div></div><span class="pill">8 MINI-GAMES · PLAY FREE</span></header>
+<section id="home"><div class="hero"><span class="eyebrow">YOUR NEXT CHALLENGE STARTS HERE</span><h2>Pick a game.<br>Beat your best.</h2><p>Football, cricket, chess, racing and quick-fire challenges — all in one arcade. Choose a game below and start playing instantly.</p><button class="btn primary" onclick="document.getElementById('gamegrid').scrollIntoView({behavior:'smooth'})">Explore games ↓</button></div>
 <div class="section"><div><h2>Choose your game</h2><p>Tap any game to open it full-screen in the arcade.</p></div></div>
 <div class="games" id="gamegrid">
 <button class="tile" onclick="start('penalty')"><span class="emoji">⚽</span><h3>Penalty Kings</h3><p>Pick a corner, beat the keeper and score 5 penalties.</p></button>
@@ -24,14 +24,6 @@
 <button class="tile" onclick="start('racer')"><span class="emoji">🏎️</span><h3>Track Racer</h3><p>Dodge traffic cones and survive the track.</p></button>
 <button class="tile" onclick="start('numbers')"><span class="emoji">🔢</span><h3>Number Blitz</h3><p>Match equal tiles and merge them for points.</p></button>
 <button class="tile" onclick="start('quiz')"><span class="emoji">🌍</span><h3>Quick Quiz</h3><p>Test your football, cricket, science and general knowledge.</p></button>
-<button class="tile" onclick="start('basketball')"><span class="emoji">🏀</span><h3>Basketball Hoops</h3><p>Take 10 shots and see how many baskets you can score.</p></button>
-<button class="tile" onclick="start('rps')"><span class="emoji">✊</span><h3>Rock Paper Scissors</h3><p>Challenge the arcade and win the best of five.</p></button>
-<button class="tile" onclick="start('memory')"><span class="emoji">🃏</span><h3>Memory Match</h3><p>Flip cards and find all matching pairs.</p></button>
-<button class="tile" onclick="start('reaction')"><span class="emoji">⚡</span><h3>Reaction Rush</h3><p>Wait for green, then tap as fast as you can.</p></button>
-<button class="tile" onclick="start('higher')"><span class="emoji">📈</span><h3>Higher or Lower</h3><p>Guess whether the next number will be higher or lower.</p></button>
-<button class="tile" onclick="start('word')"><span class="emoji">🔤</span><h3>Word Scramble</h3><p>Unscramble five mixed-up words.</p></button>
-<button class="tile" onclick="start('target')"><span class="emoji">🎯</span><h3>Target Tap</h3><p>Tap the moving target to rack up points.</p></button>
-<button class="tile" onclick="start('typing')"><span class="emoji">⌨️</span><h3>Typing Sprint</h3><p>Type the displayed word correctly to score.</p></button>
 </div><p class="note">Parkside Arcade · Made for curious minds and friendly competition.</p></section>
 <section id="play"><div class="bar"><button class="btn" onclick="home()">← All games</button><span class="pill" id="gameTitle">GAME MODE</span><span class="pill">SCORE <b id="score">0</b></span></div><div class="stage" id="stage"></div></section>
 </main>
