@@ -65,7 +65,13 @@ function start(g){if(reactionTimer)clearTimeout(reactionTimer);reactionTimer=nul
 function home(){$('play').style.display='none';$('home').style.display='block';window.scrollTo(0,0)}
 function b(t,fn,cl=''){return '<button class="btn '+cl+'" onclick="'+fn+'">'+t+'</button>'}
 function upd(){$('score').textContent=score}
-function done(msg){$('stage').innerHTML='<div class="big">🏆</div><h2>Round complete!</h2><p>'+msg+'</p><div class="status">Final score: '+score+'</div><div class="choices">'+b('Play again',"start('"+game+"')",'primary')+b('All games','home()')+'</div>'}
+function done(msg){
+  const maxScores={penalty:5,tactics:10,cricket:null,chess:1,tennis:null,racer:null,numbers:null,quiz:5,basketball:null,rps:5,memory:12,reaction:null,higher:10,word:5,target:null,typing:5};
+  const max=maxScores[game];
+  const percent=Number.isFinite(max)&&max>0?Math.round(score/max*100):null;
+  const verdict=percent===null?(score>0?'Nice effort — keep building your best score!':'Good game! Try again and beat your score.'):percent>=80?'Excellent performance! 🏆':percent>=50?'Good effort — you’re getting there! 💪':'Keep practising — you can beat that score! ⚽';
+  $('stage').innerHTML='<div class="big">🏆</div><span class="tag">YOUR RESULTS</span><h2>Game complete!</h2><p>'+msg+'</p><div class="status" style="padding:18px;margin:16px auto;max-width:420px"><div style="font-size:13px;opacity:.8">FINAL SCORE</div><div style="font-size:38px;font-weight:900;color:var(--lime);margin:6px 0">'+score+(Number.isFinite(max)?' / '+max:'')+'</div>'+(percent===null?'':'<div style="font-size:16px;font-weight:700">'+percent+'% score</div>')+'<p style="margin:10px 0 0">'+verdict+'</p></div><div class="choices">'+b('🔁 Play again',"start('"+game+"')",'primary')+b('🎮 All games','home()')+'</div>';
+}
 function render(){
   upd();
   const s=$('stage');
